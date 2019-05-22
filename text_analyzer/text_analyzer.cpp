@@ -12,17 +12,55 @@ void text_analyzer::setText(string text)
 
 int text_analyzer::getLettersCount()
 {
-    return 100;
-}
+    int countw = 0;
+    bool word = false;
+    for(int i = 0;i < text.length();i++ ){
+        if(text[i]>65 && text[i]<91){
+            word = true;
+        }
+        else if(text[i]> 96  && text[i] < 123){
+            word = true;
+        }
+        else{
+            word = false;
+        }
+
+        if(word == true){
+            countw++;
+        }
+    }
+    return countw;
+ }
 
 int text_analyzer::getWordsCount()
 {
-    return 100;
-}
+    int countw = 0;
+    bool word = false;
+    for(int i = 0;i < text.length();i++ ){
+        if(text[i]>65 && text[i]<91){
+            word = true;
+        }
+        else if(text[i]> 96  && text[i] < 123){
+            word = true;
+        }
+        else{
+            if(word == true){
+                countw++;
+            }
+            word = false;
+        }
+
+
+    }
+    if(word == true){
+        countw++;
+    }
+    return countw;
+ }
 
 int text_analyzer::getSymbolsCount()
 {
-    return 100;
+    return text.length();
 }
 
 int text_analyzer::getSentencesCount()

@@ -16,11 +16,20 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_Refresh_clicked()
 {
+    int a; int b; int c; int d;
 QString text = ui ->textEdit->toPlainText();
 string utf8_text = text.toUtf8().constData();
 textAnalyzer.setText(utf8_text);
-textAnalyzer.getLettersCount();
-textAnalyzer.getWordsCount();
-textAnalyzer.getSymbolsCount();
-textAnalyzer.getSentencesCount();
+a = textAnalyzer.getLettersCount();
+b = textAnalyzer.getWordsCount();
+c = textAnalyzer.getSymbolsCount();
+d = textAnalyzer.getSentencesCount();
+QString s = QString::number(a);
+QString t = QString::number(b);
+QString u = QString::number(c);
+QString v = QString::number(d);
+ui -> label->setText(s);
+ui -> label_2->setText(t);
+ui -> label_4->setText(u);
+ui -> label_3->setText(v);
 }
